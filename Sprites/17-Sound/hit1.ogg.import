@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hit1.ogg-476b5d4d3c6746c8541fcfb0068e70c6.oggstr"
+
+[deps]
+
+source_file="res://Sprites/17-Sound/hit1.ogg"
+dest_files=[ "res://.import/hit1.ogg-476b5d4d3c6746c8541fcfb0068e70c6.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

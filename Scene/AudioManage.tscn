@@ -1,0 +1,55 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Sprites/17-Sound/jump3.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Sprites/17-Sound/hit1.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Sprites/17-Sound/hurt2.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Sprites/17-Sound/hurt3.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Sprites/17-Sound/coin5.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Sprites/17-Sound/explosion4.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Script/AudioManage.gd" type="Script" id=7]
+[ext_resource path="res://Sprites/17-Sound/footstep_concrete_003.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Sprites/17-Sound/hit5.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Sprites/17-Sound/hit2.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Sprites/17-Sound/fire.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Sprites/17-Sound/ball_boom.ogg" type="AudioStream" id=12]
+
+[node name="AudioManage" type="Node"]
+script = ExtResource( 7 )
+
+[node name="PlayerAttack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="PlayerJump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[node name="Indoor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="PlayerHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="EnemyHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="EnemyAttack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="Diamond" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Boom" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="PlayerGround" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="BoxBreak" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="Fire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = 15.535
+
+[node name="BallBoom" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = 15.0

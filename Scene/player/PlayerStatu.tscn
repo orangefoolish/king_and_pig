@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+export var health=3 setget set_health;
+export var max_health=3
+export var score=0 setget get_score;
+
+signal no_health;
+signal health_change
+signal hit 
+signal get_score
+signal next_level
+
+func set_health(value):
+	health=min(value,max_health)
+	health=max(0,health);
+	emit_signal(\"health_change\",health)
+	if(health<=0):
+		emit_signal(\"no_health\")	
+
+func get_score(value):
+	score=value
+	emit_signal(\"get_score\")
+"
+
+[node name="PlayerStatu" type="Node2D"]
+visible = false
+script = SubResource( 1 )

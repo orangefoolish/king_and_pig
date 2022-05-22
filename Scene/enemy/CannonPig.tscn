@@ -1,0 +1,163 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://Sprites/07-Pig With a Match/Lighting the Match (26x18).png" type="Texture" id=1]
+[ext_resource path="res://Sprites/07-Pig With a Match/Match On (26x18).png" type="Texture" id=2]
+[ext_resource path="res://Sprites/07-Pig With a Match/Lighting the Cannon (26x18).png" type="Texture" id=3]
+[ext_resource path="res://Script/CannonPig.gd" type="Script" id=4]
+[ext_resource path="res://Scene/HurtBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scene/PlayerDetection.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scene/DirectionHitBox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scene/Stat.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sprites/07-Pig With a Match/Dead (34x28).png" type="Texture" id=9]
+[ext_resource path="res://Sprites/03-Pig/Hit (34x28).png" type="Texture" id=10]
+[ext_resource path="res://Scene/Dialog.tscn" type="PackedScene" id=11]
+
+[sub_resource type="RectangleShape2D" id=28]
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 80.5, 10.75 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 34, 28 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 10 )
+region = Rect2( 34, 0, 34, 28 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 34, 32 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 9 )
+region = Rect2( 34, 0, 34, 32 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 9 )
+region = Rect2( 68, 0, 34, 32 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 9 )
+region = Rect2( 102, 0, 34, 32 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 26, 20 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 2 )
+region = Rect2( 26, 0, 26, 20 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 2 )
+region = Rect2( 52, 0, 26, 20 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 26, 18 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 26, 0, 26, 18 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 52, 0, 26, 18 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 26, 18 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 26, 0, 26, 18 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 52, 0, 26, 18 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 18 ), SubResource( 19 ) ],
+"loop": true,
+"name": "Hit",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "Die",
+"speed": 15.0
+}, {
+"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
+"loop": true,
+"name": "MatchOn",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": false,
+"name": "FireCannon",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": false,
+"name": "LightMatch",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 11, 8.5 )
+
+[node name="CannonPig" type="KinematicBody2D"]
+script = ExtResource( 4 )
+
+[node name="HitBox" parent="." instance=ExtResource( 7 )]
+
+[node name="Position2D" parent="HitBox" index="0"]
+collision_layer = 0
+collision_mask = 2048
+
+[node name="CollisionShape2D" parent="HitBox/Position2D" index="0"]
+position = Vector2( -15, 0 )
+shape = SubResource( 28 )
+
+[node name="PlayerDetection" parent="." instance=ExtResource( 6 )]
+
+[node name="CollisionShape2D" parent="PlayerDetection/PlayerDetectionZone" index="0"]
+position = Vector2( -72.5, -0.25 )
+shape = SubResource( 27 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -1.90735e-06, 0 )
+scale = Vector2( 0.923077, 1 )
+frames = SubResource( 10 )
+animation = "Die"
+
+[node name="EnemyStat" parent="." instance=ExtResource( 8 )]
+health = 1
+max_health = 1
+
+[node name="Dialog" parent="." instance=ExtResource( 11 )]
+
+[node name="AnimatedSprite" parent="Dialog" index="0"]
+position = Vector2( 1, -11 )
+
+[node name="HurtBox" parent="." instance=ExtResource( 5 )]
+visible = false
+collision_layer = 16
+collision_mask = 8
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+position = Vector2( 1, 1.5 )
+shape = SubResource( 11 )
+
+[connection signal="timeout" from="HitBox/Position2D/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="PlayerDetection/PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_entered"]
+[connection signal="body_exited" from="PlayerDetection/PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_exited"]
+[connection signal="no_health" from="EnemyStat" to="." method="_on_EnemyStat_no_health"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+
+[editable path="HitBox"]
+[editable path="PlayerDetection"]
+[editable path="Dialog"]
+[editable path="HurtBox"]

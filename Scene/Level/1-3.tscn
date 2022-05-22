@@ -1,0 +1,114 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scene/WallTileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene/StaffTileMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/InDoor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/player/PlayerUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scene/player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scene/OutDoor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scene/Platform.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scene/Box.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scene/enemy/CommonPig.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sprites/16-UI/attack.png" type="Texture" id=10]
+[ext_resource path="res://Scene/player/Message.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scene/Level/2-1.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scene/Camera.tscn" type="PackedScene" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 2.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 31.5, 13.125 )
+
+[node name="1-3" type="Node2D"]
+position = Vector2( -8, 24 )
+
+[node name="WallTileMap" parent="." instance=ExtResource( 1 )]
+position = Vector2( -8, -48 )
+show_collision = true
+tile_data = PoolIntArray( 0, 0, 65537, 1, 0, 65537, 2, 0, 65537, 3, 0, 65537, 4, 0, 65537, 5, 0, 65537, 6, 0, 65537, 7, 0, 65537, 8, 0, 65537, 9, 0, 65537, 10, 0, 65537, 11, 0, 65537, 12, 0, 65537, 13, 0, 65537, 14, 0, 65537, 15, 0, 65537, 16, 0, 65537, 17, 0, 65537, 65536, 0, 65537, 65537, 0, 65537, 65538, 0, 65537, 65539, 0, 65537, 65540, 0, 65537, 65541, 0, 65537, 65542, 0, 65537, 65543, 0, 65537, 65544, 0, 65537, 65545, 0, 65537, 65546, 0, 65537, 65547, 0, 65537, 65548, 0, 65537, 65549, 0, 65537, 65550, 0, 65537, 65551, 0, 65537, 65552, 0, 65537, 65553, 0, 65537, 131072, 0, 65537, 131073, 1, 0, 131074, 0, 131073, 131075, 0, 131073, 131076, 0, 131073, 131077, 0, 131073, 131078, 0, 131073, 131079, 0, 131073, 131080, 0, 131073, 131081, 0, 131073, 131082, 0, 131073, 131083, 0, 131073, 131084, 0, 131073, 131085, 0, 131073, 131086, 0, 131073, 131087, 0, 131073, 131088, 1, 1, 131089, 0, 65537, 196608, 0, 65537, 196609, 0, 65538, 196610, 3, 65536, 196611, 3, 65537, 196612, 3, 65537, 196613, 3, 65537, 196614, 3, 65537, 196615, 3, 65537, 196616, 3, 65537, 196617, 3, 65537, 196618, 3, 65537, 196619, 3, 65537, 196620, 3, 65537, 196621, 3, 65537, 196622, 3, 65537, 196623, 3, 65537, 196624, 0, 65536, 196625, 0, 65537, 262144, 0, 65537, 262145, 0, 65538, 262146, 3, 65536, 262147, 3, 65537, 262148, 3, 65537, 262149, 3, 65537, 262150, 3, 65537, 262151, 3, 65537, 262152, 3, 65537, 262153, 3, 65537, 262154, 3, 65537, 262155, 3, 65537, 262156, 3, 65537, 262157, 3, 65537, 262158, 3, 65537, 262159, 3, 65537, 262160, 0, 65536, 262161, 0, 65537, 327680, 0, 65537, 327681, 0, 65538, 327682, 3, 65536, 327683, 3, 65537, 327684, 3, 65537, 327685, 3, 65537, 327686, 3, 65537, 327687, 3, 65537, 327688, 3, 65537, 327689, 6, 0, 327690, 6, 1, 327691, 6, 1, 327692, 6, 1, 327693, 6, 1, 327694, 6, 1, 327695, 6, 1, 327696, 0, 65536, 327697, 0, 65537, 393216, 0, 65537, 393217, 0, 65538, 393218, 3, 65536, 393219, 3, 65537, 393220, 3, 65537, 393221, 3, 65537, 393222, 3, 65537, 393223, 3, 65537, 393224, 3, 65537, 393225, 3, 65537, 393226, 3, 65537, 393227, 3, 65537, 393228, 3, 65537, 393229, 3, 65537, 393230, 3, 65537, 393231, 3, 65537, 393232, 0, 65536, 393233, 0, 65537, 458752, 0, 65537, 458753, 0, 65538, 458754, 3, 65536, 458755, 3, 65537, 458756, 3, 65537, 458757, 3, 65537, 458758, 3, 65537, 458759, 3, 65537, 458760, 3, 65537, 458761, 3, 65537, 458762, 3, 65537, 458763, 3, 65537, 458764, 3, 65537, 458765, 3, 65537, 458766, 3, 65537, 458767, 3, 65537, 458768, 0, 65536, 458769, 0, 65537, 524288, 0, 65537, 524289, 0, 65538, 524290, 3, 65536, 524291, 3, 65537, 524292, 3, 65537, 524293, 3, 65537, 524294, 3, 65537, 524295, 3, 65537, 524296, 3, 65537, 524297, 3, 65537, 524298, 3, 65537, 524299, 3, 65537, 524300, 3, 65537, 524301, 3, 65537, 524302, 3, 65537, 524303, 3, 65537, 524304, 0, 65536, 524305, 0, 65537, 589824, 0, 65537, 589825, 1, 65536, 589826, 0, 1, 589827, 0, 1, 589828, 0, 1, 589829, 0, 1, 589830, 0, 1, 589831, 0, 1, 589832, 0, 1, 589833, 0, 1, 589834, 0, 1, 589835, 0, 1, 589836, 0, 1, 589837, 0, 1, 589838, 0, 1, 589839, 0, 1, 589840, 1, 65537, 589841, 0, 65537, 655360, 0, 65537, 655361, 0, 65537, 655362, 0, 65537, 655363, 0, 65537, 655364, 0, 65537, 655365, 0, 65537, 655366, 0, 65537, 655367, 0, 65537, 655368, 0, 65537, 655369, 0, 65537, 655370, 0, 65537, 655371, 0, 65537, 655372, 0, 65537, 655373, 0, 65537, 655374, 0, 65537, 655375, 0, 65537, 655376, 0, 65537, 655377, 0, 65537 )
+
+[node name="StaffTileMap" parent="." instance=ExtResource( 2 )]
+position = Vector2( -8, -88 )
+tile_data = PoolIntArray( 327682, 0, 0, 327685, 0, 0, 327687, 7, 0, 393218, 1, 0, 393221, 1, 0, 458754, 2, 0, 458757, 2, 0, 458759, 8, 0, 458760, 8, 2, 458770, 0, 0, 524294, 8, 0, 524295, 8, 2, 524298, 7, 0, 589829, 8, 0, 589830, 8, 2 )
+
+[node name="PlayerUI" parent="." instance=ExtResource( 4 )]
+margin_left = 24.0
+margin_top = -16.0
+margin_right = 90.0
+margin_bottom = 18.0
+
+[node name="OutDoor" parent="." instance=ExtResource( 6 )]
+position = Vector2( 81, 213 )
+
+[node name="SmallPlatform" parent="." instance=ExtResource( 7 )]
+position = Vector2( 160, 208 )
+
+[node name="CollisionShape2D" parent="SmallPlatform" index="0"]
+position = Vector2( 24, -5 )
+shape = SubResource( 1 )
+
+[node name="SmallPlatform3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 160, 208 )
+
+[node name="CollisionShape2D" parent="SmallPlatform3" index="0"]
+position = Vector2( 88, -69 )
+shape = SubResource( 1 )
+
+[node name="SmallPlatform4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 160, 208 )
+
+[node name="CollisionShape2D" parent="SmallPlatform4" index="0"]
+position = Vector2( 56, -37 )
+shape = SubResource( 1 )
+
+[node name="InDoor" parent="." instance=ExtResource( 3 )]
+position = Vector2( 477, 213 )
+next_scence = ExtResource( 12 )
+
+[node name="YSort" type="YSort" parent="."]
+position = Vector2( 372, 96 )
+
+[node name="Box" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 102, -6 )
+
+[node name="Box2" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 81, -6 )
+
+[node name="Box3" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 107, 9 )
+
+[node name="Box4" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 89, 9 )
+
+[node name="Box5" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 71, 9 )
+
+[node name="Message" parent="." instance=ExtResource( 11 )]
+position = Vector2( 127, 134 )
+
+[node name="Sprite" parent="Message" index="0"]
+position = Vector2( -23, 26 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" parent="Message/PlayerDetectionZone/PlayerDetectionZone" index="0"]
+position = Vector2( -39.5, 93.125 )
+shape = SubResource( 2 )
+
+[node name="CommonPig" parent="." instance=ExtResource( 9 )]
+position = Vector2( 376, 232 )
+
+[node name="CommonPig2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 286, 104 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 81, 226 )
+
+[node name="Camera" parent="." instance=ExtResource( 13 )]
+position = Vector2( 278, 141 )
+
+[editable path="SmallPlatform"]
+[editable path="SmallPlatform3"]
+[editable path="SmallPlatform4"]
+[editable path="Message"]
+[editable path="Message/PlayerDetectionZone"]

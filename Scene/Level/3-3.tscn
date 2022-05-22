@@ -1,0 +1,181 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Scene/WallTileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene/Trap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/StaffTileMap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scene/OutDoor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scene/Platform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scene/enemy/CannonPig.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scene/Cannon.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scene/Bomb.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scene/player/PlayerUI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scene/InDoor.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scene/enemy/BombPig.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scene/enemy/CommonPig.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scene/Box.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scene/Camera.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scene/Level/Finish.tscn" type="PackedScene" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15.5, 2 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 2.5 )
+
+[node name="3-3" type="Node2D"]
+position = Vector2( -5, 8 )
+
+[node name="WallTileMap" parent="." instance=ExtResource( 1 )]
+position = Vector2( -11, 2 )
+tile_data = PoolIntArray( -65536, 0, 65537, -65535, 0, 65537, -65534, 0, 65537, -65533, 0, 65537, -65532, 0, 65537, -65531, 0, 65537, -65530, 0, 65537, -65529, 0, 65537, -65528, 0, 65537, -65527, 0, 65537, -65526, 0, 65537, -65525, 0, 65537, -65524, 0, 65537, -65523, 0, 65537, -65522, 0, 65537, -65521, 0, 65537, -65520, 0, 65537, 0, 0, 65537, 1, 0, 65537, 2, 0, 65537, 3, 0, 65537, 4, 0, 65537, 5, 0, 65537, 6, 0, 65537, 7, 0, 65537, 8, 0, 65537, 9, 0, 65537, 10, 0, 65537, 11, 0, 65537, 12, 0, 65537, 13, 0, 65537, 14, 0, 65537, 15, 0, 65537, 16, 0, 65537, 65536, 0, 65537, 65537, 1, 0, 65538, 0, 131073, 65539, 0, 131073, 65540, 0, 131073, 65541, 0, 131073, 65542, 0, 131073, 65543, 0, 131073, 65544, 0, 131073, 65545, 0, 131073, 65546, 0, 131073, 65547, 0, 131073, 65548, 0, 131073, 65549, 0, 131073, 65550, 0, 131073, 65551, 1, 1, 65552, 0, 65537, 131072, 0, 65537, 131073, 0, 65538, 131074, 3, 0, 131075, 3, 1, 131076, 3, 1, 131077, 3, 1, 131078, 3, 1, 131079, 3, 1, 131080, 3, 1, 131081, 3, 1, 131082, 3, 1, 131083, 3, 1, 131084, 3, 1, 131085, 3, 1, 131086, 3, 2, 131087, 0, 65536, 131088, 0, 65537, 196608, 0, 65537, 196609, 0, 65538, 196610, 3, 131072, 196611, 3, 65537, 196612, 3, 65537, 196613, 3, 65537, 196614, 3, 65537, 196615, 3, 65537, 196616, 3, 65537, 196617, 3, 65537, 196618, 3, 65537, 196619, 3, 65537, 196620, 3, 65537, 196621, 3, 65537, 196622, 3, 65538, 196623, 0, 65536, 196624, 0, 65537, 262144, 0, 65537, 262145, 0, 65538, 262146, 0, 1, 262147, 3, 65537, 262148, 3, 65537, 262149, 3, 65537, 262150, 3, 65537, 262151, 3, 65537, 262152, 3, 65537, 262153, 3, 65537, 262154, 3, 65537, 262155, 3, 65537, 262156, 3, 65537, 262157, 6, 0, 262158, 6, 2, 262159, 0, 65536, 262160, 0, 65537, 327680, 0, 65537, 327681, 0, 65538, 327682, 3, 65536, 327683, 3, 65537, 327684, 6, 0, 327685, 6, 1, 327686, 6, 1, 327687, 6, 1, 327688, 6, 1, 327689, 6, 1, 327690, 6, 1, 327691, 6, 1, 327692, 6, 2, 327693, 3, 65537, 327694, 3, 65538, 327695, 0, 65536, 327696, 0, 65537, 393216, 0, 65537, 393217, 0, 65538, 393218, 3, 65536, 393219, 3, 65537, 393220, 3, 65537, 393221, 3, 65537, 393222, 3, 65537, 393223, 3, 65537, 393224, 3, 65537, 393225, 3, 65537, 393226, 3, 65537, 393227, 3, 65537, 393228, 3, 65537, 393229, 3, 65537, 393230, 3, 65538, 393231, 0, 65536, 393232, 0, 65537, 458752, 0, 65537, 458753, 0, 65538, 458754, 3, 65536, 458755, 3, 65537, 458756, 3, 65537, 458757, 3, 65537, 458758, 3, 65537, 458759, 3, 65537, 458760, 3, 65537, 458761, 3, 65537, 458762, 3, 65537, 458763, 3, 65537, 458764, 3, 65537, 458765, 3, 65537, 458766, 3, 65538, 458767, 0, 65536, 458768, 0, 65537, 524288, 0, 65537, 524289, 0, 65538, 524290, 3, 131072, 524291, 3, 131073, 524292, 3, 131073, 524293, 3, 131073, 524294, 3, 131073, 524295, 3, 131073, 524296, 3, 131073, 524297, 3, 131073, 524298, 3, 131073, 524299, 3, 131073, 524300, 3, 131073, 524301, 3, 131073, 524302, 3, 131074, 524303, 0, 65536, 524304, 0, 65537, 589824, 0, 65537, 589825, 1, 65536, 589826, 0, 1, 589827, 0, 1, 589828, 0, 1, 589829, 0, 1, 589830, 0, 1, 589831, 0, 1, 589832, 0, 1, 589833, 0, 1, 589834, 0, 1, 589835, 0, 1, 589836, 0, 1, 589837, 0, 1, 589838, 0, 1, 589839, 1, 65537, 589840, 0, 65537 )
+
+[node name="StaffTileMap" parent="." instance=ExtResource( 3 )]
+position = Vector2( -11, 2 )
+tile_data = PoolIntArray( 262148, 8, 3, 262151, 8, 3, 262154, 8, 3, 458754, 8, 3 )
+
+[node name="OutDoor" parent="." instance=ExtResource( 5 )]
+position = Vector2( 443, 103 )
+
+[node name="InDoor" parent="." instance=ExtResource( 11 )]
+position = Vector2( 443, 263 )
+next_scence = ExtResource( 16 )
+
+[node name="YSort" type="YSort" parent="."]
+position = Vector2( -11, 2 )
+
+[node name="Trap" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 170, 145 )
+
+[node name="Trap8" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 393, 145 )
+
+[node name="Trap9" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 365, 145 )
+
+[node name="Trap10" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 337, 145 )
+
+[node name="Trap7" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 142, 145 )
+
+[node name="Trap2" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 197, 145 )
+
+[node name="Trap3" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 226, 145 )
+
+[node name="Trap4" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 253, 145 )
+
+[node name="Trap5" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 309, 145 )
+
+[node name="Trap6" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 281, 145 )
+
+[node name="YSort2" type="YSort" parent="."]
+position = Vector2( -11, 2 )
+
+[node name="SmallPlatform" parent="YSort2" instance=ExtResource( 6 )]
+position = Vector2( 293, 116 )
+
+[node name="CollisionShape2D" parent="YSort2/SmallPlatform" index="0"]
+position = Vector2( 43, 14 )
+shape = SubResource( 1 )
+
+[node name="SmallPlatform2" parent="YSort2" instance=ExtResource( 6 )]
+position = Vector2( 293, 116 )
+
+[node name="CollisionShape2D" parent="YSort2/SmallPlatform2" index="0"]
+position = Vector2( -52.5, 14 )
+shape = SubResource( 1 )
+
+[node name="SmallPlatform3" parent="YSort2" instance=ExtResource( 6 )]
+position = Vector2( 293, 116 )
+
+[node name="CollisionShape2D" parent="YSort2/SmallPlatform3" index="0"]
+position = Vector2( -149, 14 )
+shape = SubResource( 1 )
+
+[node name="Bomb" parent="." instance=ExtResource( 9 )]
+position = Vector2( 216, 124 )
+
+[node name="Bomb2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 112, 283 )
+
+[node name="PlayerUI" parent="." instance=ExtResource( 10 )]
+margin_left = 21.0
+margin_top = 1.0
+margin_right = 87.0
+margin_bottom = 35.0
+
+[node name="SmallPlatform" parent="." instance=ExtResource( 6 )]
+position = Vector2( 67, 230 )
+
+[node name="CollisionShape2D" parent="SmallPlatform" index="0"]
+position = Vector2( 2, -1.5 )
+shape = SubResource( 2 )
+
+[node name="Enemy" type="YSort" parent="."]
+position = Vector2( -11, 2 )
+
+[node name="Cannon" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 86, 118 )
+
+[node name="AnimatedSprite" parent="Enemy/Cannon" index="2"]
+position = Vector2( 5, 0 )
+flip_h = true
+
+[node name="BombPig" parent="Enemy" instance=ExtResource( 12 )]
+position = Vector2( 76, 212 )
+
+[node name="AnimatedSprite" parent="Enemy/BombPig" index="0"]
+flip_h = true
+
+[node name="CommonPig" parent="Enemy" instance=ExtResource( 13 )]
+position = Vector2( 335, 280 )
+
+[node name="CannonPig" parent="Enemy" instance=ExtResource( 7 )]
+position = Vector2( 75, 119 )
+
+[node name="AnimatedSprite" parent="Enemy/CannonPig" index="2"]
+flip_h = true
+
+[node name="Boxes" type="YSort" parent="."]
+position = Vector2( 138, 283 )
+
+[node name="Box" parent="Boxes" instance=ExtResource( 14 )]
+
+[node name="Box2" parent="Boxes" instance=ExtResource( 14 )]
+position = Vector2( 0, -45 )
+
+[node name="Box3" parent="Boxes" instance=ExtResource( 14 )]
+position = Vector2( 18, 0 )
+
+[node name="Box4" parent="Boxes" instance=ExtResource( 14 )]
+position = Vector2( 0, -30 )
+
+[node name="Box5" parent="Boxes" instance=ExtResource( 14 )]
+position = Vector2( 0, -15 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 443, 117 )
+
+[node name="Camera" parent="." instance=ExtResource( 15 )]
+position = Vector2( 275, 156 )
+
+[editable path="YSort2/SmallPlatform"]
+[editable path="YSort2/SmallPlatform2"]
+[editable path="YSort2/SmallPlatform3"]
+[editable path="SmallPlatform"]
+[editable path="Enemy/Cannon"]
+[editable path="Enemy/Cannon/HurtBox"]
+[editable path="Enemy/BombPig"]
+[editable path="Enemy/BombPig/HitBox"]
+[editable path="Enemy/BombPig/PlayerDetection"]
+[editable path="Enemy/CannonPig"]
+[editable path="Enemy/CannonPig/HitBox"]
+[editable path="Enemy/CannonPig/PlayerDetection"]
+[editable path="Enemy/CannonPig/Dialog"]
+[editable path="Enemy/CannonPig/HurtBox"]

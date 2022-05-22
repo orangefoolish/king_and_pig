@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/explosion4.ogg-1da6601607a0f6240a2d597064ef99ad.oggstr"
+
+[deps]
+
+source_file="res://Sprites/17-Sound/explosion4.ogg"
+dest_files=[ "res://.import/explosion4.ogg-1da6601607a0f6240a2d597064ef99ad.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

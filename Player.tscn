@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/17-Sound/select_003.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Sprites/17-Sound/jump3.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Sprites/17-Sound/hit5.ogg" type="AudioStream" id=3]
+
+[node name="Node" type="Node"]
+
+[node name="PlayerAttack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="PlayerJump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="Indoor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )

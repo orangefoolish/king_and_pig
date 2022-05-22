@@ -1,0 +1,110 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://font/BasicPupBlack.font" type="BitmapFont" id=1]
+[ext_resource path="res://Sprites/bg.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/12-Live and Coins/Numbers (6x8).png" type="Texture" id=3]
+[ext_resource path="res://Script/Finish.gd" type="Script" id=4]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec2 direction=vec2(-0.5,-0.5);
+uniform float speed=0.5;
+
+void fragment(){
+	vec2 move=direction*TIME*speed;
+	COLOR=texture(TEXTURE,UV+move);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/direction = Vector2( -0.5, -0.5 )
+shader_param/speed = 0.5
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 3 )
+region = Rect2( 54, 0, 6, 8 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 6, 8 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 3 )
+region = Rect2( 6, 0, 6, 8 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 3 )
+region = Rect2( 12, 0, 6, 8 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 3 )
+region = Rect2( 18, 0, 6, 8 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 3 )
+region = Rect2( 24, 0, 6, 8 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 3 )
+region = Rect2( 30, 0, 6, 8 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 3 )
+region = Rect2( 36, 0, 6, 8 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 3 )
+region = Rect2( 42, 0, 6, 8 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 3 )
+region = Rect2( 48, 0, 6, 8 )
+
+[sub_resource type="SpriteFrames" id=33]
+animations = [ {
+"frames": [ SubResource( 32 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"loop": false,
+"name": "Animate",
+"speed": 5.0
+} ]
+
+[node name="Finish" type="Control"]
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 544.0
+margin_bottom = 329.0
+color = Color( 0.72549, 0.513726, 0.407843, 1 )
+
+[node name="background" type="TextureRect" parent="."]
+material = SubResource( 2 )
+margin_top = 2.0
+margin_right = 542.0
+margin_bottom = 329.0
+texture = ExtResource( 2 )
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="."]
+margin_left = 112.0
+margin_top = 79.0
+margin_right = 296.0
+margin_bottom = 128.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "      congratulations
+you finished this game
+    your score is:"
+uppercase = true
+
+[node name="TensNumber" type="AnimatedSprite" parent="."]
+position = Vector2( 362, 197 )
+scale = Vector2( 4.12499, 3.73437 )
+frames = SubResource( 33 )
+animation = "Animate"
+
+[node name="OneNumber" type="AnimatedSprite" parent="."]
+position = Vector2( 386.25, 197.031 )
+scale = Vector2( 4.25001, 3.75781 )
+frames = SubResource( 33 )
+animation = "Animate"

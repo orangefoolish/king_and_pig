@@ -1,0 +1,102 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scene/StaffTileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene/Camera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/player/PlayerUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/WallTileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scene/Box.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scene/OutDoor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scene/InDoor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scene/player/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scene/Bomb.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scene/enemy/PigBox.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scene/enemy/CommonPig.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scene/Level/2-3.tscn" type="PackedScene" id=12]
+
+[node name="2-2" type="Node2D"]
+
+[node name="WallTileMap" parent="." instance=ExtResource( 4 )]
+position = Vector2( -24, 10 )
+tile_data = PoolIntArray( -65536, 0, 65537, -65535, 0, 65537, -65534, 0, 65537, -65533, 0, 65537, -65532, 0, 65537, -65531, 0, 65537, -65530, 0, 65537, -65529, 0, 65537, -65528, 0, 65537, -65527, 0, 65537, -65526, 0, 65537, -65525, 0, 65537, -65524, 0, 65537, -65523, 0, 65537, -65522, 0, 65537, -65521, 0, 65537, -65520, 0, 65537, -65519, 0, 65537, 0, 0, 65537, 1, 0, 65537, 2, 0, 65537, 3, 0, 65537, 4, 0, 65537, 5, 0, 65537, 6, 0, 65537, 7, 0, 65537, 8, 0, 65537, 9, 0, 65537, 10, 0, 65537, 11, 0, 65537, 12, 0, 65537, 13, 0, 65537, 14, 0, 65537, 15, 0, 65537, 16, 0, 65537, 17, 0, 65537, 65536, 0, 65537, 65537, 1, 0, 65538, 0, 131073, 65539, 0, 131073, 65540, 0, 131073, 65541, 0, 131073, 65542, 0, 131073, 65543, 0, 131073, 65544, 0, 131073, 65545, 0, 131073, 65546, 0, 131073, 65547, 0, 131073, 65548, 0, 131073, 65549, 0, 131073, 65550, 0, 131073, 65551, 0, 131073, 65552, 1, 1, 65553, 0, 65537, 131072, 0, 65537, 131073, 0, 65538, 131074, 3, 0, 131075, 3, 1, 131076, 3, 1, 131077, 3, 1, 131078, 3, 1, 131079, 3, 1, 131080, 3, 1, 131081, 3, 1, 131082, 3, 1, 131083, 3, 1, 131084, 3, 1, 131085, 3, 1, 131086, 3, 1, 131087, 3, 2, 131088, 0, 65536, 131089, 0, 65537, 196608, 0, 65537, 196609, 0, 65538, 196610, 3, 65536, 196611, 3, 65537, 196612, 3, 65537, 196613, 3, 65537, 196614, 3, 65537, 196615, 3, 65537, 196616, 3, 65537, 196617, 3, 65537, 196618, 3, 65537, 196619, 3, 65537, 196620, 3, 65537, 196621, 3, 65537, 196622, 3, 65537, 196623, 3, 65538, 196624, 0, 65536, 196625, 0, 65537, 262144, 0, 65537, 262145, 0, 65538, 262146, 3, 65536, 262147, 3, 65537, 262148, 3, 65537, 262149, 3, 65537, 262150, 6, 0, 262151, 6, 1, 262152, 6, 1, 262153, 6, 1, 262154, 6, 1, 262155, 6, 2, 262156, 3, 65537, 262157, 3, 65537, 262158, 3, 65537, 262159, 3, 65538, 262160, 0, 65536, 262161, 0, 65537, 327680, 0, 65537, 327681, 0, 65538, 327682, 3, 65536, 327683, 3, 65537, 327684, 3, 65537, 327685, 3, 65537, 327686, 3, 65537, 327687, 3, 65537, 327688, 3, 65537, 327689, 3, 65537, 327690, 3, 65537, 327691, 3, 65537, 327692, 3, 65537, 327693, 3, 65537, 327694, 3, 65537, 327695, 3, 65538, 327696, 0, 65536, 327697, 0, 65537, 393216, 0, 65537, 393217, 0, 65538, 393218, 3, 65536, 393219, 3, 65537, 393220, 3, 65537, 393221, 3, 65537, 393222, 3, 65537, 393223, 3, 65537, 393224, 3, 65537, 393225, 3, 65537, 393226, 3, 65537, 393227, 3, 65537, 393228, 3, 65537, 393229, 3, 65537, 393230, 3, 65537, 393231, 3, 65538, 393232, 0, 65536, 393233, 0, 65537, 458752, 0, 65537, 458753, 0, 65538, 458754, 3, 131072, 458755, 3, 131073, 458756, 3, 131073, 458757, 3, 131073, 458758, 3, 131073, 458759, 3, 131073, 458760, 3, 131073, 458761, 3, 131073, 458762, 3, 131073, 458763, 3, 131073, 458764, 3, 131073, 458765, 3, 131073, 458766, 3, 131073, 458767, 3, 131074, 458768, 0, 65536, 458769, 0, 65537, 524288, 0, 65537, 524289, 1, 65536, 524290, 0, 1, 524291, 0, 1, 524292, 0, 1, 524293, 0, 1, 524294, 0, 1, 524295, 0, 1, 524296, 0, 1, 524297, 0, 1, 524298, 0, 1, 524299, 0, 1, 524300, 0, 1, 524301, 0, 1, 524302, 0, 1, 524303, 0, 1, 524304, 1, 65537, 524305, 0, 65537, 589824, 0, 65537, 589825, 0, 65537, 589826, 0, 65537, 589827, 0, 65537, 589828, 0, 65537, 589829, 0, 65537, 589830, 0, 65537, 589831, 0, 65537, 589832, 0, 65537, 589833, 0, 65537, 589834, 0, 65537, 589835, 0, 65537, 589836, 0, 65537, 589837, 0, 65537, 589838, 0, 65537, 589839, 0, 65537, 589840, 0, 65537, 589841, 0, 65537 )
+
+[node name="StaffTileMap" parent="." instance=ExtResource( 1 )]
+position = Vector2( -8, 2 )
+tile_data = PoolIntArray( 196610, 0, 0, 196622, 0, 0, 262146, 1, 0, 262147, 6, 0, 262158, 1, 0, 327682, 2, 0, 327692, 7, 0, 327694, 1, 0, 393230, 1, 0, 458766, 3, 0 )
+
+[node name="PlayerUI" parent="." instance=ExtResource( 3 )]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 82.0
+margin_bottom = 42.0
+
+[node name="Camera" parent="." instance=ExtResource( 2 )]
+position = Vector2( 270, 165 )
+
+[node name="OutDoor" parent="." instance=ExtResource( 6 )]
+position = Vector2( 263, 110 )
+
+[node name="InDoor" parent="." instance=ExtResource( 7 )]
+position = Vector2( 227, 238 )
+next_scence = ExtResource( 12 )
+
+[node name="Boxes" type="YSort" parent="."]
+position = Vector2( 75, 258 )
+
+[node name="Box" parent="Boxes" instance=ExtResource( 5 )]
+
+[node name="Box2" parent="Boxes" instance=ExtResource( 5 )]
+position = Vector2( -18, -15 )
+
+[node name="Box3" parent="Boxes" instance=ExtResource( 5 )]
+position = Vector2( 54, 0 )
+
+[node name="Box4" parent="Boxes" instance=ExtResource( 5 )]
+position = Vector2( 54, -15 )
+
+[node name="Box5" parent="Boxes" instance=ExtResource( 5 )]
+position = Vector2( 36, 0 )
+
+[node name="Box6" parent="Boxes" instance=ExtResource( 5 )]
+position = Vector2( 28, -15 )
+
+[node name="Box7" parent="Boxes" instance=ExtResource( 5 )]
+position = Vector2( 0, -15 )
+
+[node name="Box8" parent="Boxes" instance=ExtResource( 5 )]
+position = Vector2( -18, 0 )
+
+[node name="Box9" parent="Boxes" instance=ExtResource( 5 )]
+position = Vector2( 18, 0 )
+
+[node name="Box10" parent="Boxes" instance=ExtResource( 5 )]
+position = Vector2( 103, -127 )
+
+[node name="Bombs" type="YSort" parent="."]
+position = Vector2( -8, 2 )
+
+[node name="Bomb" parent="Bombs" instance=ExtResource( 9 )]
+position = Vector2( 186, 114 )
+
+[node name="Bomb2" parent="Bombs" instance=ExtResource( 9 )]
+position = Vector2( 357, 129 )
+
+[node name="Bomb3" parent="Bombs" instance=ExtResource( 9 )]
+position = Vector2( 329, 130 )
+
+[node name="Enemy" type="YSort" parent="."]
+position = Vector2( 267, 185 )
+
+[node name="CommonPig" parent="Enemy" instance=ExtResource( 11 )]
+position = Vector2( 3, 73 )
+
+[node name="PigBox" parent="Enemy" instance=ExtResource( 10 )]
+position = Vector2( 196, 72 )
+
+[node name="PigBox2" parent="Enemy" instance=ExtResource( 10 )]
+position = Vector2( 166, 72 )
+
+[node name="PigBox3" parent="Enemy" instance=ExtResource( 10 )]
+position = Vector2( -193, 41 )
+
+[node name="Player" parent="." instance=ExtResource( 8 )]
+position = Vector2( 265, 125 )

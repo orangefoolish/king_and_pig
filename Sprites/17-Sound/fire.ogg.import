@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/fire.ogg-d6f70414be4f5230811571d7c9d0ebaa.oggstr"
+
+[deps]
+
+source_file="res://Sprites/17-Sound/fire.ogg"
+dest_files=[ "res://.import/fire.ogg-d6f70414be4f5230811571d7c9d0ebaa.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

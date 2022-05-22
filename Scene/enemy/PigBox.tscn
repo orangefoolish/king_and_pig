@@ -1,0 +1,240 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://Sprites/06-Pig Hide in the Box/Looking Out (26x20).png" type="Texture" id=1]
+[ext_resource path="res://Script/PigBox.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/06-Pig Hide in the Box/Jump Anticipation (26x20).png" type="Texture" id=3]
+[ext_resource path="res://Scene/DirectionHitBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scene/HurtBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Script/HurtBox/PigBoxHurtBox.gd" type="Script" id=6]
+[ext_resource path="res://Scene/PlayerDetection.tscn" type="PackedScene" id=7]
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 26, 20 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 3 )
+region = Rect2( 26, 0, 26, 20 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 26, 20 )
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 26, 20 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 26, 0, 26, 20 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 52, 0, 26, 20 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 52, 0, 26, 20 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 26, 0, 26, 20 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 26, 20 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ) ],
+"loop": true,
+"name": "Stay",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "Look",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "Hide",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 9.5, 8.5 )
+
+[sub_resource type="Animation" id=16]
+resource_name = "Attack"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "Hide"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Look"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Stay" ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "Stay"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Stay" ]
+}
+
+[sub_resource type="CircleShape2D" id=22]
+radius = 117.466
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 9.5, 8.5 )
+
+[sub_resource type="CircleShape2D" id=20]
+radius = 70.4557
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 8.5, 7.75 )
+
+[node name="PigBox" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 771
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 1, 0.95 )
+frames = SubResource( 4 )
+animation = "Stay"
+
+[node name="HurtBox" parent="." instance=ExtResource( 5 )]
+visible = false
+collision_layer = 16
+collision_mask = 8
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+position = Vector2( 0.5, 1.5 )
+shape = SubResource( 21 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Attack = SubResource( 16 )
+anims/Hide = SubResource( 12 )
+anims/Look = SubResource( 6 )
+anims/RESET = SubResource( 5 )
+anims/Stay = SubResource( 13 )
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource( 7 )]
+
+[node name="CollisionShape2D" parent="PlayerDetectionZone/PlayerDetectionZone" index="0"]
+position = Vector2( 0, 0 )
+shape = SubResource( 22 )
+
+[node name="Aim" parent="." instance=ExtResource( 4 )]
+
+[node name="CollisionShape2D" parent="Aim/Position2D" index="0"]
+position = Vector2( 0.5, 1.5 )
+shape = SubResource( 19 )
+
+[node name="AttackArea2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D"]
+position = Vector2( 0, 1 )
+shape = SubResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0.5, 1.25 )
+shape = SubResource( 18 )
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+[connection signal="area_exited" from="HurtBox" to="." method="_on_HurtBox_area_exited"]
+[connection signal="area_exited" from="HurtBox" to="HurtBox" method="_on_HurtBox_area_exited"]
+[connection signal="body_entered" from="PlayerDetectionZone/PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_entered"]
+[connection signal="body_exited" from="PlayerDetectionZone/PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_exited"]
+[connection signal="area_entered" from="Aim/Position2D" to="." method="_on_Position2D_area_entered"]
+[connection signal="timeout" from="Aim/Position2D/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="AttackArea2D" to="." method="_on_AttackArea2D_body_entered"]
+
+[editable path="HurtBox"]
+[editable path="PlayerDetectionZone"]
+[editable path="Aim"]

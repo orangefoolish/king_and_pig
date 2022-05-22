@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hit03.wav-30a489345f92c1a05265978ce2af67fd.sample"
+
+[deps]
+
+source_file="res://Sprites/17-Sound/hit03.wav"
+dest_files=[ "res://.import/hit03.wav-30a489345f92c1a05265978ce2af67fd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

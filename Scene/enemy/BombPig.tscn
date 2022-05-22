@@ -1,0 +1,151 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://Sprites/05-Pig Thowing a Bomb/Idle (26x26).png" type="Texture" id=1]
+[ext_resource path="res://Sprites/05-Pig Thowing a Bomb/Throwing Boom (26x26).png" type="Texture" id=2]
+[ext_resource path="res://Sprites/05-Pig Thowing a Bomb/Run (26x26).png" type="Texture" id=3]
+[ext_resource path="res://Scene/PlayerDetection.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Script/BombPig.gd" type="Script" id=5]
+[ext_resource path="res://Scene/HitBox.tscn" type="PackedScene" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 26, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 52, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 78, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 104, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 130, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 26, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 52, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 78, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 104, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 130, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 156, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 182, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 208, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 234, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 2 )
+region = Rect2( 26, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 2 )
+region = Rect2( 52, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 2 )
+region = Rect2( 78, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 2 )
+region = Rect2( 104, 0, 26, 26 )
+
+[sub_resource type="SpriteFrames" id=22]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": false,
+"name": "Move",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": false,
+"name": "ThrowBomb",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 11, 8.5 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 11, 8.5 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 78.5, 10 )
+
+[node name="BombPig" type="KinematicBody2D"]
+collision_layer = 0
+script = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 22 )
+animation = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 4.5 )
+shape = SubResource( 23 )
+
+[node name="HitBox" parent="." instance=ExtResource( 6 )]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2( 0, 4.5 )
+shape = SubResource( 25 )
+
+[node name="PlayerDetection" parent="." instance=ExtResource( 4 )]
+
+[node name="CollisionShape2D" parent="PlayerDetection/PlayerDetectionZone" index="0"]
+position = Vector2( -66.5, 4 )
+shape = SubResource( 26 )
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_HitBox_area_entered"]
+[connection signal="body_entered" from="PlayerDetection/PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_entered"]
+
+[editable path="HitBox"]
+[editable path="PlayerDetection"]
